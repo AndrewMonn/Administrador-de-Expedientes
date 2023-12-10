@@ -1,3 +1,5 @@
+APP de productividad para gestión de archivos de extensión .docx 
+
 Para el correcto funcionamiento de la aplicación:
 
   1) La aplicación debe estar ubicada dentro de una carpeta principal, la cual debe ser de uso exculivo de la aplicación.
@@ -17,5 +19,5 @@ Aplicación de productividad creada por Andres Luna - Desarrollador Front-End.
     LinkedIn: https://www.linkedin.com/in/andrewmonn/
     Github: https://github.com/AndrewMonn/
     Email: andreslunacas2000@gmail.com
-    
+
 --!! ]
