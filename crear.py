@@ -148,3 +148,15 @@ def crear_Archivo(extension, CI, fecha, plantilla, txt_Ubicacion):
                 msg.setFixedSize(200, 150)
                 msg.exec()
                 break
+            
+# [ !!--
+
+#   Aplicación de productividad creada por Andres Luna - Desarrollador Front-End. 
+
+#   Redes y Contacto:
+
+#     LinkedIn: https://www.linkedin.com/in/andrewmonn/
+#     Github: https://github.com/AndrewMonn/
+#     Email: andreslunacas2000@gmail.com
+
+# --!! ]

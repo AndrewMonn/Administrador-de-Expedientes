@@ -83,3 +83,15 @@ def borrar_Archivo(extension, CI, txt_Ubicacion):
         msg.setText(f"El expediente {CI}{ext} no existe")
         msg.setFixedSize(200, 150)
         msg.exec()
+        
+# [ !!--
+
+#   Aplicación de productividad creada por Andres Luna - Desarrollador Front-End. 
+
+#   Redes y Contacto:
+
+#     LinkedIn: https://www.linkedin.com/in/andrewmonn/
+#     Github: https://github.com/AndrewMonn/
+#     Email: andreslunacas2000@gmail.com
+
+# --!! ]
