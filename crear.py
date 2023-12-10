@@ -19,20 +19,23 @@ fecha = ''
 
 def crear_Archivo(extension, CI, fecha, plantilla, txt_Ubicacion):
     
-    found = False
-    
     for ext in extension:
 
         for archivo in p.glob('**/*' + ext):
 
             directorio_nuevo = (p / fecha)
+            
             archivo_nuevo_r = Path(directorio_nuevo / str(CI + ext))
     
+            #Validacion para evitar que se creen archivos fuera de su carpeta de fecha
+            
             if not fecha == '':
                 
-                if not archivo.stem == CI:
+                #Comprobación de que no existe un archivo con el mismo numero de registro
+                
+                if not CI == archivo.stem:
 
-                    found = True
+                    #En caso de que no exista una carpeta con la fecha proporcionada, se creara una, y en caso de que si exista, se saltara al siguiente paso y solo copiara el archivo "plantilla.docx" en la carpeta correspondiente y lo renombrara al valor de la variable CI
 
                     if not ( p / fecha).is_dir():
 
@@ -52,6 +55,8 @@ def crear_Archivo(extension, CI, fecha, plantilla, txt_Ubicacion):
                         msg.setFixedSize(200, 150)
                         msg.exec()
 
+                        #Se imprime la ubicacion donde se ubica el archivo CI
+
                         txt_Ubicacion.setPlainText(str(ruta.cwd()) + str('\\') + str(fecha) + str('\\') + str(CI) + str(ext))
 
                         msg = QMessageBox()
@@ -61,10 +66,12 @@ def crear_Archivo(extension, CI, fecha, plantilla, txt_Ubicacion):
                         msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
 
 
-                    # msg.exec() devuelve la constante del botón que ha pulsado el usuario
+                        # msg.exec() devuelve la constante del botón que ha pulsado el usuario
+                        
                         resultado = msg.exec()
 
                         # Comprobamos qué botón ha pulsado el usuario
+                        
                         if resultado == QMessageBox.Yes:
 
                             # Si el usuario ha pulsado "Sí", procedemos a abrir el archivo
@@ -80,12 +87,15 @@ def crear_Archivo(extension, CI, fecha, plantilla, txt_Ubicacion):
                             break
 
                         elif resultado == QMessageBox.No:
+                            
                             # Si el usuario ha pulsado "No", no abriremos el archivo
+                            
                             print('No se abrira el archivo')
                             break
 
-
-                elif archivo.stem == CI and not archivo.is_file():
+                #En caso de que si exista un archivo con el nombre del valor de la variable CI, alertara de esto y no creara uno nuevo
+                
+                elif CI == archivo.stem and archivo.is_file():
 
                     ruta = Path(archivo)
 
@@ -94,6 +104,8 @@ def crear_Archivo(extension, CI, fecha, plantilla, txt_Ubicacion):
                     msg.setText("El expediente ya existe.")
                     msg.setFixedSize(200, 150)
                     msg.exec()
+                    
+                    #Se imprime la ubicacion donde se ubica el archivo CI
                     
                     txt_Ubicacion.setPlainText(str(ruta.cwd()) + str('\\') + str(fecha) + str('\\') + str(CI) + str(ext))
 
@@ -125,6 +137,8 @@ def crear_Archivo(extension, CI, fecha, plantilla, txt_Ubicacion):
                         print('No se abrira el archivo')
 
                     break
+                
+            #Alerta en caso de no ingresar la fecha para la creacion de la carpeta o ubicacion del archivoen carpeta existente 
                 
             elif fecha == '' :
                 
