@@ -1,4 +1,3 @@
-
 # Importamos los módulos necesarios
 from PySide6.QtWidgets import QApplication, QMainWindow, QLabel, QLineEdit, QPushButton, QTextEdit, QMessageBox
 from PySide6.QtCore import Qt
