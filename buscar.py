@@ -20,6 +20,8 @@ def buscar_Archivo(extension, CI, txt_Ubicacion):
 
         for archivo in p.glob('**/*' + ext):
 
+            #Verifica si el archivo existe
+
             if archivo.stem == CI:
 
                 found = True
@@ -35,6 +37,8 @@ def buscar_Archivo(extension, CI, txt_Ubicacion):
                     msg.setText(f'El expediente ha sido encontrado. ¿Desea abrir el expediente: {archivo}?')
                     msg.setFixedSize(200, 150)
                     msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+                    
+                    #Se imprime la ubicacion donde se ubica el archivo CI
                     
                     txt_Ubicacion.setPlainText(str(ruta.cwd()) + str('\\') + str(ruta))
 
@@ -59,6 +63,9 @@ def buscar_Archivo(extension, CI, txt_Ubicacion):
                         # Si el usuario ha pulsado "No", no abriremos el archivo
                         print('No se abrira el archivo')
                     break
+                
+    #En caso de no existir el archivo, mandara un mensaje de error
+    
     if not found:
 
         msg = QMessageBox()

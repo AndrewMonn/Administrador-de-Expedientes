@@ -22,6 +22,8 @@ def borrar_Archivo(extension, CI, txt_Ubicacion):
 
         for archivo in p.glob('**/*' + ext):
 
+            #Verifica si el archivo existe
+
             if archivo.stem == CI:
 
                 found = True
@@ -42,7 +44,7 @@ def borrar_Archivo(extension, CI, txt_Ubicacion):
 
                     # Comprobamos qué botón ha pulsado el usuario
                     if resultado == QMessageBox.Yes:
-                        # Si el usuario ha pulsado "Sí", procedemos a eliminar el ruta_archivo
+                        # Si el usuario ha pulsado "Sí", procedemos a eliminar el archivo ruta_archivo
                         os.remove(ruta_archivo)
 
                         msg = QMessageBox()
@@ -66,13 +68,16 @@ def borrar_Archivo(extension, CI, txt_Ubicacion):
                         msg.setFixedSize(200, 150)
                         msg.exec()
 
+                        #Se imprime la ubicacion donde se ubica el archivo CI
+
                         txt_Ubicacion.setPlainText(str(ruta.cwd()) + str('\\') + str(ruta))
 
                         break
 
+    #En caso de no existir el archivo, mandara un mensaje de error
+
     if not found:
-    
-    
+
         msg = QMessageBox()
         msg.setWindowTitle("Operación Fallida")
         msg.setText(f"El expediente {CI}{ext} no existe")
