@@ -19,7 +19,8 @@ fecha = ''
 
 def crear_Archivo(extension, CI, fecha, plantilla, txt_Ubicacion):
     
-
+    found = False
+    
     for ext in extension:
 
         for archivo in p.glob('**/*' + ext):
@@ -30,6 +31,8 @@ def crear_Archivo(extension, CI, fecha, plantilla, txt_Ubicacion):
             if not fecha == '':
                 
                 if not archivo.stem == CI:
+
+                    found = True
 
                     if not ( p / fecha).is_dir():
 

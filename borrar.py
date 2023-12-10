@@ -23,6 +23,7 @@ def borrar_Archivo(extension, CI, txt_Ubicacion):
         for archivo in p.glob('**/*' + ext):
 
             if archivo.stem == CI:
+
                 found = True
 
                 ruta_archivo = p / archivo
