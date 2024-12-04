@@ -18,6 +18,6 @@ Aplicación de productividad creada por Andres Luna - Desarrollador Front-End.
 
     LinkedIn: https://www.linkedin.com/in/andrewmonn/
     Github: https://github.com/AndrewMonn/
-    Email: andreslunacas2000@gmail.com
+    Email: andrewmonn.dev@gmail.com
 
 --!! ]
